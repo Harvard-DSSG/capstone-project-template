@@ -4,7 +4,7 @@ This repository is a starter template for Digital Humanities Certificate capston
 
 ## Quickstart
 
-- `nvm use 24`
+- [Install NodeJS](https://nodejs.org/) if you haven't already
 - `npm install`
 - `npm run dev`
 

@@ -50,6 +50,7 @@ module.exports = function (eleventyConfig) {
   });
 
   return {
+    pathPrefix: "/capstone-project-template/",
     dir: {
       input: "src",
       includes: "_includes",
