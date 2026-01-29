@@ -1,20 +1,16 @@
-module.exports = function() {
-  return {
-    navItems: [
-      { "label": "Home", "url": "/" },
-      {
-        "label": "Project",
-        "children": [
-          { "label": "Pyodide (Python)", "url": "/project/pyodide/" },
-          { "label": "Notebook (ipynb)", "url": "/notebooks/example/" },
-          { "label": "Iframes", "url": "/project/iframes/" },
-          { "label": "Code Blocks", "url": "/project/code-blocks/" },
-          { "label": "Mermaid", "url": "/project/mermaid/" },
-          { "label": "LaTeX", "url": "/project/latex/" }
-        ]
-      },
-      { "label": "Documentation", "url": "/documentation/" }
+module.exports = [
+  { "label": "Home", "url": "/" },
+  {
+    "label": "Project",
+    "children": [
+      { "label": "Pyodide (Python)", "url": "/project/pyodide/" },
+      { "label": "Notebook (ipynb)", "url": "/notebooks/example/" },
+      { "label": "Iframes", "url": "/project/iframes/" },
+      { "label": "Code Blocks", "url": "/project/code-blocks/" },
+      { "label": "Mermaid", "url": "/project/mermaid/" },
+      { "label": "LaTeX", "url": "/project/latex/" }
     ]
-  };
-};
+  },
+  { "label": "Documentation", "url": "/documentation/" }
+];
 
