@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        {% include "partials/head-meta.njk" %}
+        <title>{{ title }} - Harvard University Digital Scholarship Group</title>
+
+
+        <style>
+            #banner {
+                --primary-banner-rgb: 226, 223, 183;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/static/css/style-global.css" />
+        <link rel="stylesheet" href="/static/css/style-secondary-page.css" />
+        <link rel="stylesheet" href="/static/css/media-queries.css" />
+
+        <script src="/static/js/hamburgerMenuOpenClose.js" defer></script>
+
+        
+    </head>
+    <body>
+
+                  {% include "partials/global-header.njk" %}
+
+        <main>
+            <div id="secondary-page-banner-container">
+                <div id="page-title-container">
+                    {% if breadcrumb %}
+                    <ul id="breadcrumbs">
+                        <li>{{ breadcrumb }}</li>
+                    </ul>
+                    {% endif %}
+                    <h1>{{ title }}</h1>
+                    {% if 'newsPost' in tags %}
+                    <span class="news-post-date">Posted <time datetime="{{ date }}">{{ date | formatNewsDisplayDate }}</time></span>
+                    {% endif %}
+                </div>
+
+                          {% include "partials/secondary-page-banner.njk" %}
+
+            </div>
+
+
+            {% if 'eventPost' in tags %}
+            <div id="two-column-container">
+                <aside id="page-internal-cta">
+                        <h2>Event Date</h2>
+                        <span>{% eventDisplayDateTime start_datetime, end_datetime %}</span>
+                        <h2>Event Location</h2>
+                        <span>{{ venue }}<br />{{ address }}</span>
+                        {% if (start_datetime | isEventPast) == false %}
+                        <button id="event-register"><a href="{{ ical_source_url }}" target="_blank">Register Now <img src="/static/img/open_in_new_FILL0_wght400_GRAD0_opsz24_white.svg" /></a></button>
+                        {% endif %}
+                </aside>
+                <article>
+                    <div class="return-to-previous"><a href="/get-involved/event-series">← Return to Events</a></div>
+                    {% if coverImage %}
+                    <div class="event-coverimage-container">
+                        <img src="{{ permalinks.Events.eventCoverImageDirectory }}/{{ coverImage }}" />
+                    </div>
+                    {% endif %}
+
+                    {{ content | safe }}
+                </article>
+            </div>
+            {% elif 'newsPost' in tags %}
+            <div id="one-column-container">
+                <article>
+                    <div class="return-to-previous"><a href="/news">← Return to News</a></div>
+                    {% if coverImage %}
+                    <div class="event-coverimage-container">
+                        <img src="{{ permalinks.News.newsCoverImageDirectory }}/{{ coverImage }}" />
+                    </div>
+                    {% endif %}
+                    {{ content | safe }}
+                </article>
+            </div>
+            {% endif %}
+
+        </main>
+
+                  {% include "partials/global-footer.njk" %}
+
+    </body>
+</html>

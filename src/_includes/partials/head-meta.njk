@@ -1,0 +1,26 @@
+<meta charset="utf8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="{{ site.description }}" />
+<meta name="robots" content="max-image-preview:large" />
+
+{% if site.url %}
+<link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+<meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+{% endif %}
+
+<meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content="{{ site.name }}" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="{{ title }} - {{ site.name }}" />
+<meta property="og:description" content="{{ site.description }}" />
+
+{% if site.ogImage %}
+<meta property="og:image" content="{{ site.ogImage }}" />
+<meta property="og:image:secure_url" content="{{ site.ogImage }}" />
+<meta name="twitter:image" content="{{ site.ogImage }}" />
+{% endif %}
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ title }} - {{ site.name }}" />
+<meta name="twitter:description" content="{{ site.description }}" />
+<link rel="icon" type="image/x-icon" href="/static/img/dsg-favicon.png" />

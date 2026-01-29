@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% include "partials/head-meta.njk" %}
+
+        <title>Home - Harvard University Digital Scholarship Group</title>
+        <link rel="stylesheet" href="/static/css/style-global.css" />
+        <link rel="stylesheet" href="/static/css/style-landing.css" />
+        <link rel="stylesheet" href="/static/css/media-queries.css" />
+
+        <script src="/static/js/hamburgerMenuOpenClose.js" defer></script>
+
+    </head>
+    <body>
+
+        {% include "partials/global-header.njk" %}
+
+        <main>
+            <section id="banner">
+                <div class="barrier"></div>
+                <div class="connector-cell connector-horizontal top-left">
+                    <span class="h-line">
+                    </span>
+                    <img class="swipe horizontal delay1" src="/static/img/swipeline-horizontal.svg" />
+
+                </div>
+                <div class="icon-cell book">
+                    <img class="banner-icon" src="/static/img/icon-book_digital.svg" alt="Icon of a book" />
+                </div>
+                <div class="connector-cell connector-horizontal top-middle">
+                    <span class="h-line"></span>
+                    <img class="swipe horizontal delay2" src="/static/img/swipeline-horizontal.svg" />
+
+                </div>
+                <div class="icon-cell magnifyingglass">
+                    <img class="banner-icon" src="/static/img/icon-magnifying_glass_digital.svg" alt="Icon of a magnifying glass" />
+
+                </div>
+                <div class="connector-cell connector-horizontal top-right">
+                    <span class="h-line"></span>
+                    <img class="swipe horizontal delay1" src="/static/img/swipeline-horizontal.svg" />
+
+                </div>
+                <div class="connector-cell connector-vertical middle-top">
+                    <span class="v-line"></span>
+                    <img class="swipe vertical delay2" src="/static/img/swipeline-horizontal.svg" />
+
+                </div>
+                <div class="icon-cell vis">
+                    <!-- <img class="banner-icon" src="/static/img/icon-vis_digital.svg" alt="Icon of a data visualization" /> -->
+                    <img id="underlay" src="/static/img/icon-dsg-shield.svg" alt="Icon of DSG shield logo" />
+
+                </div>
+                <div class="connector-cell connector-vertical middle-middle">
+                    <span class="v-line"></span>
+                    <img class="swipe vertical delay3" src="/static/img/swipeline-horizontal.svg" />
+
+                </div>
+                <div class="connector-cell connector-horizontal middle-left">
+                    <span class="h-line"></span>
+                    <img class="swipe horizontal-reverse delay3" src="/static/img/swipeline-horizontal.svg" />
+
+                </div>
+                <div class="connector-cell connector-vertical middle-bottom">
+                    <span class="v-line"></span>
+                    <img class="swipe vertical delay3" src="/static/img/swipeline-horizontal.svg" />
+
+                </div>
+                <div class="connector-cell connector-horizontal bottom-left">
+                    <span class="h-line"></span>
+                    <img class="swipe horizontal delay3" src="/static/img/swipeline-horizontal.svg" />
+                </div>
+                <div class="icon-cell map">
+                    <img class="banner-icon" src="/static/img/icon-map_digital.svg" alt="Icon of a map" />
+
+                </div>
+                <div class="connector-cell connector-horizontal bottom-middle">
+                    <span class="h-line"></span>
+                    <img class="swipe horizontal delay2" src="/static/img/swipeline-horizontal.svg" />
+
+                </div>
+                <div class="icon-cell dsgshield">
+                    <!-- <img id="underlay" src="/static/img/icon-dsg-shield.svg" alt="Icon of DSG shield logo" /> -->
+                    <img class="banner-icon" src="/static/img/icon-vis_digital.svg" alt="Icon of a data visualization" />
+
+                </div>
+                <div class="connector-cell connector-horizontal bottom-right">
+                    <span class="h-line"></span>
+                    <img class="swipe horizontal delay1" src="/static/img/swipeline-horizontal.svg" />
+                </div>
+
+                <div class="boilerplate">
+                    <h1>Digital Scholarship at Harvard University</h1>
+
+                    <div class="boilerplate-text">
+                        <p>The <b>Digital Scholarship Group (DSG)</b> brings together Harvard faculty and staff with expertise in a host of technical, pedagogical, and subject-specific areas across disciplinary and divisional borders, to provide faculty, students, and staff interested in incorporating digital methods into their teaching and research with a single point of entry to the many resources available at Harvard. <b><a href="{{ permalinks.AboutDSG.pageSlug }}">Learn more &rarr;</a></b></p>    
+                    </div>
+                    <div class="cta">
+                    <ul>
+                        <li><a href="/get-involved/consultations/"><img class="cta-icon" src="/static/img/cta-consultation.png"/>Schedule a consultation</a></li>
+                        <li><a href="/get-involved/event-series/"><img class="cta-icon" src="/static/img/cta-workshop.png"/>Find an event</a></li>
+                        <li><a href="/initiatives/ds-certificate/"><img class="cta-icon" src="/static/img/cta-ds-certificate.png"/>Learn about the DS Certificate Program</a></li>
+                        <li><a href="/contact/"><img class="cta-icon" src="/static/img/cta-mailing-list.png"/>Get in touch</a></li>
+                    </ul>
+                    </div>
+                </div>
+                <div id="banner-fadeout"></div>
+            </section>
+
+            {% set upcomingEventsCount = collections.eventPost | filterUpcomingEvents | countArrayItems %}
+            {% if upcomingEventsCount > 0 %}
+            <section id="events-listing">
+                <h1>Upcoming Events</h1>
+                <ul class="news-posts-list">
+                {% for post in collections.eventPost | filterUpcomingEvents %}
+                <li class="single-news-post">
+                    {% if post.data.coverImage %}
+                    <img src="{{ permalinks.Events.eventCoverImageDirectory }}/{{ post.data.coverImage }}" />
+                    {% else %}
+                    <img src="{{ permalinks.Events.placeholderCoverImage }}" />
+                    {% endif %}
+                    <div class="news-post-details">
+                    <a href="/events/posts/{{ post.fileSlug }}"><h1>{{ post.data.title }}</h1></a>
+                    <time>{{ post.data.start_datetime | formatDisplayDateFromDatetime }}</time>
+                    <p>{{ post.content | truncateContentPreview }}... <a href="/events/posts/{{ post.fileSlug }}" class="read-more">Continue reading &rarr;</a></p>  
+                    </div>
+                </li>
+                {% endfor %}
+                </ul>
+                <div class="find-more-events-container">
+                    <a href="{{ permalinks.Calendar.pageSlug }}">Find more events on our calendar &rarr;</a>
+                </div>
+            </section>
+            {% endif %}
+
+            {% set recentNewsCount = collections.newsPost | isRecentNews | countArrayItems %}
+            {% if recentNewsCount > 0 %}
+            <section id="latest-news-listing">
+                <h1>Recent News</h1>
+                <ul class="news-posts-list">
+                    {% for post in collections.newsPost | reverse %}
+                    {% if loop.index0 < 2 %}
+                      <li class="single-news-post">
+                        <img src="{{ permalinks.News.newsCoverImageDirectory }}/{{ post.data.coverImage }}" />
+                        <div class="news-post-details">
+                          <a href="/news/posts/{{ post.fileSlug }}"><h1>{{ post.data.title }}</h1></a>
+                          <time>{{ post.data | formatDisplayDate }}</time>
+                          <p>{{ post.content | truncateContentPreview }}... <a href="/news/posts/{{ post.fileSlug }}" class="read-more">Continue reading &rarr;</a></p>  
+                        </div>
+                      </li>
+                      {% endif %}
+                    {% endfor %}
+                    </ul>
+                <div class="find-more-events-container">
+                    <a href="{{ permalinks.News.pageSlug }}">Read more news &rarr;</a>
+                </div>
+            </section>
+            {% endif %}
+
+        </main>
+
+        {% include "partials/global-footer.njk" %}
+
+    </body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "name": "Capstone Project Title",
+  "description": "A digital humanities capstone project site. Replace this description with a short summary of your research question and methods.",
+  "url": "",
+  "ogImage": "/static/img/dsg-og-card-image.png",
+  "headerLines": ["Capstone", "Project", "Title"],
+  "footerLine": "Capstone Project (edit this footer text)"
+}

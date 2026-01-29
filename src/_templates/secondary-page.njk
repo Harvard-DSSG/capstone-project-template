@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        {% include "partials/head-meta.njk" %}
+        <title>{{ title }} - {{ site.name }}</title>
+
+        <style>
+            #banner {
+                --primary-banner-rgb: 226, 223, 183;
+            }
+        </style>
+        <link rel="stylesheet" href="/static/css/style-global.css" />
+        <link rel="stylesheet" href="/static/css/style-secondary-page.css" />
+
+        <link rel="stylesheet" href="/static/css/syntax.css" />
+
+        <link rel="stylesheet" href="/static/css/media-queries.css" />
+
+        {% include "partials/renderers.njk" %}
+
+        <script src="/static/js/hamburgerMenuOpenClose.js" defer></script>
+
+
+    </head>
+    <body>
+
+                  {% include "partials/global-header.njk" %}
+
+        <main>
+            <div id="secondary-page-banner-container">
+                <div id="page-title-container">
+                    {% if breadcrumb %}
+                    <ul id="breadcrumbs">
+                        <li>{{ breadcrumb }}</li>
+                    </ul>
+                    {% endif %}
+                    <h1>{{ title }}</h1>
+                </div>
+
+                          {% include "partials/secondary-page-banner.njk" %}
+
+            </div>
+
+
+            {% if layoutStyle === "two-column" %}
+            <div id="two-column-container">
+            {% elif layoutStyle === "one-column" %}
+            <div id="one-column-container">
+            {% else %}
+            <div id="two-column-container">
+            {% endif %}
+                <article>
+                    {{ content | safe }}
+                </article>
+            </div>
+        </main>
+
+                  {% include "partials/global-footer.njk" %}
+
+    </body>
+</html>

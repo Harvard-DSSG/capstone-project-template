@@ -1,0 +1,47 @@
+<header id="global-page-header">
+    <div id="dsg-header-group">
+        <a href="/">
+        <img src="/static/img/dsg-shield.svg" alt="Shield logo for Digital Scholarship Group" />
+        <h1>{{ site.headerLines[0] }}<br>{{ site.headerLines[1] }}<br>{{ site.headerLines[2] }}</h1>
+        </a>
+    </div>
+    <nav id="uncollapsed-menu">
+        <ul id="nav-toplevel-menu">
+            {% for item in navigation %}
+                {% if item.children %}
+                <li class="has-submenu">{{ item.label }}
+                    <ul class="nav-submenu">
+                        {% for child in item.children %}
+                        <li><a href="{{ child.url }}">{{ child.label }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                {% else %}
+                <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </nav>
+    <button id="hamburger-menu-button">
+        <img id="hamburger-menu-button-open-icon" class="hamburger-menu-icon-display" src="/static/img/menu_FILL0_wght400_GRAD0_opsz24.png" alt="Menu icon" />
+        <img id="hamburger-menu-button-close-icon" src="/static/img/close_FILL0_wght400_GRAD0_opsz24.png" alt="Menu icon" />
+
+    </button>
+    <nav id="hamburger-menu">
+        <ul id="hamburger-nav-toplevel-menu">
+            {% for item in navigation %}
+                {% if item.children %}
+                <li>{{ item.label }}
+                    <ul class="nav-submenu">
+                        {% for child in item.children %}
+                        <li><a href="{{ child.url }}">{{ child.label }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                {% else %}
+                <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </nav>
+</header>
