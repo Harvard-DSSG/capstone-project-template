@@ -12,12 +12,12 @@
                 <li class="has-submenu"><span>{{ item.label }}</span>
                     <ul class="nav-submenu">
                         {% for child in item.children %}
-                        <li><a href="{{ child.url }}">{{ child.label }}</a></li>
+                        <li><a href="{{ child.url | url }}">{{ child.label }}</a></li>
                         {% endfor %}
                     </ul>
                 </li>
                 {% else %}
-                <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+                <li><a href="{{ item.url | url }}">{{ item.label }}</a></li>
                 {% endif %}
             {% endfor %}
         </ul>
@@ -34,12 +34,12 @@
                 <li><span>{{ item.label }}</span>
                     <ul class="nav-submenu">
                         {% for child in item.children %}
-                        <li><a href="{{ child.url }}">{{ child.label }}</a></li>
+                        <li><a href="{{ child.url | url }}">{{ child.label }}</a></li>
                         {% endfor %}
                     </ul>
                 </li>
                 {% else %}
-                <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+                <li><a href="{{ item.url | url }}">{{ item.label }}</a></li>
                 {% endif %}
             {% endfor %}
         </ul>
