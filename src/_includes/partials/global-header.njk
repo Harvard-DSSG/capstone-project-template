@@ -1,7 +1,7 @@
 <header id="global-page-header">
     <div id="dsg-header-group">
-        <a href="/">
-        <img src="/static/img/dsg-shield.svg" alt="Shield logo for Digital Scholarship Group" />
+        <a href="{{ '/' | url }}">
+        <img src="{{ '/static/img/dsg-shield.svg' | url }}" alt="Shield logo for Digital Scholarship Group" />
         <h1>{{ site.headerLines[0] }}<br>{{ site.headerLines[1] }}<br>{{ site.headerLines[2] }}</h1>
         </a>
     </div>
@@ -23,8 +23,8 @@
         </ul>
     </nav>
     <button id="hamburger-menu-button">
-        <img id="hamburger-menu-button-open-icon" class="hamburger-menu-icon-display" src="/static/img/menu_FILL0_wght400_GRAD0_opsz24.png" alt="Menu icon" />
-        <img id="hamburger-menu-button-close-icon" src="/static/img/close_FILL0_wght400_GRAD0_opsz24.png" alt="Menu icon" />
+        <img id="hamburger-menu-button-open-icon" class="hamburger-menu-icon-display" src="{{ '/static/img/menu_FILL0_wght400_GRAD0_opsz24.png' | url }}" alt="Menu icon" />
+        <img id="hamburger-menu-button-close-icon" src="{{ '/static/img/close_FILL0_wght400_GRAD0_opsz24.png' | url }}" alt="Menu icon" />
 
     </button>
     <nav id="hamburger-menu">

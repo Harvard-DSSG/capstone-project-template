@@ -50,7 +50,7 @@ module.exports = function (eleventyConfig) {
   });
 
   return {
-    pathPrefix: "/capstone-project-template/",
+    pathPrefix: process.env.ELEVENTY_ENV === "production" ? "/capstone-project-template/" : "/",
     dir: {
       input: "src",
       includes: "_includes",

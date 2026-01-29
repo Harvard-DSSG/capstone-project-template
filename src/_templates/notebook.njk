@@ -10,14 +10,14 @@
             }
         </style>
 
-        <link rel="stylesheet" href="/static/css/style-global.css" />
-        <link rel="stylesheet" href="/static/css/style-secondary-page.css" />
-        <link rel="stylesheet" href="/static/css/syntax.css" />
-        <link rel="stylesheet" href="/static/css/media-queries.css" />
+        <link rel="stylesheet" href="{{ '/static/css/style-global.css' | url }}" />
+        <link rel="stylesheet" href="{{ '/static/css/style-secondary-page.css' | url }}" />
+        <link rel="stylesheet" href="{{ '/static/css/syntax.css' | url }}" />
+        <link rel="stylesheet" href="{{ '/static/css/media-queries.css' | url }}" />
 
         {% include "partials/renderers.njk" %}
 
-        <script src="/static/js/hamburgerMenuOpenClose.js" defer></script>
+        <script src="{{ '/static/js/hamburgerMenuOpenClose.js' | url }}" defer></script>
     </head>
     <body>
         {% include "partials/global-header.njk" %}

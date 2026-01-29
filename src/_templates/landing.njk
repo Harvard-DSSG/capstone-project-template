@@ -4,11 +4,11 @@
         {% include "partials/head-meta.njk" %}
 
         <title>Home - Harvard University Digital Scholarship Group</title>
-        <link rel="stylesheet" href="/static/css/style-global.css" />
-        <link rel="stylesheet" href="/static/css/style-landing.css" />
-        <link rel="stylesheet" href="/static/css/media-queries.css" />
+        <link rel="stylesheet" href="{{ '/static/css/style-global.css' | url }}" />
+        <link rel="stylesheet" href="{{ '/static/css/style-landing.css' | url }}" />
+        <link rel="stylesheet" href="{{ '/static/css/media-queries.css' | url }}" />
 
-        <script src="/static/js/hamburgerMenuOpenClose.js" defer></script>
+        <script src="{{ '/static/js/hamburgerMenuOpenClose.js' | url }}" defer></script>
 
     </head>
     <body>
@@ -21,67 +21,67 @@
                 <div class="connector-cell connector-horizontal top-left">
                     <span class="h-line">
                     </span>
-                    <img class="swipe horizontal delay1" src="/static/img/swipeline-horizontal.svg" />
+                    <img class="swipe horizontal delay1" src="{{ '/static/img/swipeline-horizontal.svg' | url }}" />
 
                 </div>
                 <div class="icon-cell book">
-                    <img class="banner-icon" src="/static/img/icon-book_digital.svg" alt="Icon of a book" />
+                    <img class="banner-icon" src="{{ '/static/img/icon-book_passthrough.png' | url }}" alt="Icon of a book" />
                 </div>
                 <div class="connector-cell connector-horizontal top-middle">
                     <span class="h-line"></span>
-                    <img class="swipe horizontal delay2" src="/static/img/swipeline-horizontal.svg" />
+                    <img class="swipe horizontal delay2" src="{{ '/static/img/swipeline-horizontal.svg' | url }}" />
 
                 </div>
                 <div class="icon-cell magnifyingglass">
-                    <img class="banner-icon" src="/static/img/icon-magnifying_glass_digital.svg" alt="Icon of a magnifying glass" />
+                    <img class="banner-icon" src="{{ '/static/img/icon-magnifying_glass_passthrough_digital.png' | url }}" alt="Icon of a magnifying glass" />
 
                 </div>
                 <div class="connector-cell connector-horizontal top-right">
                     <span class="h-line"></span>
-                    <img class="swipe horizontal delay1" src="/static/img/swipeline-horizontal.svg" />
+                    <img class="swipe horizontal delay1" src="{{ '/static/img/swipeline-horizontal.svg' | url }}" />
 
                 </div>
                 <div class="connector-cell connector-vertical middle-top">
                     <span class="v-line"></span>
-                    <img class="swipe vertical delay2" src="/static/img/swipeline-horizontal.svg" />
+                    <img class="swipe vertical delay2" src="{{ '/static/img/swipeline-horizontal.svg' | url }}" />
 
                 </div>
                 <div class="icon-cell vis">
-                    <!-- <img class="banner-icon" src="/static/img/icon-vis_digital.svg" alt="Icon of a data visualization" /> -->
-                    <img id="underlay" src="/static/img/icon-dsg-shield.svg" alt="Icon of DSG shield logo" />
+                    <!-- <img class="banner-icon" src="{{ '/static/img/icon-vis_digital.svg' | url }}" alt="Icon of a data visualization" /> -->
+                    <img id="underlay" src="{{ '/static/img/icon-dsg-shield.svg' | url }}" alt="Icon of DSG shield logo" />
 
                 </div>
                 <div class="connector-cell connector-vertical middle-middle">
                     <span class="v-line"></span>
-                    <img class="swipe vertical delay3" src="/static/img/swipeline-horizontal.svg" />
+                    <img class="swipe vertical delay3" src="{{ '/static/img/swipeline-horizontal.svg' | url }}" />
 
                 </div>
                 <div class="connector-cell connector-horizontal middle-left">
                     <span class="h-line"></span>
-                    <img class="swipe horizontal-reverse delay3" src="/static/img/swipeline-horizontal.svg" />
+                    <img class="swipe horizontal-reverse delay3" src="{{ '/static/img/swipeline-horizontal.svg' | url }}" />
 
                 </div>
                 <div class="connector-cell connector-vertical middle-bottom">
                     <span class="v-line"></span>
-                    <img class="swipe vertical delay3" src="/static/img/swipeline-horizontal.svg" />
+                    <img class="swipe vertical delay3" src="{{ '/static/img/swipeline-horizontal.svg' | url }}" />
 
                 </div>
                 <div class="connector-cell connector-horizontal bottom-left">
                     <span class="h-line"></span>
-                    <img class="swipe horizontal delay3" src="/static/img/swipeline-horizontal.svg" />
+                    <img class="swipe horizontal delay3" src="{{ '/static/img/swipeline-horizontal.svg' | url }}" />
                 </div>
                 <div class="icon-cell map">
-                    <img class="banner-icon" src="/static/img/icon-map_digital.svg" alt="Icon of a map" />
+                    <img class="banner-icon" src="{{ '/static/img/icon-map_passthrough_digital.png' | url }}" alt="Icon of a map" />
 
                 </div>
                 <div class="connector-cell connector-horizontal bottom-middle">
                     <span class="h-line"></span>
-                    <img class="swipe horizontal delay2" src="/static/img/swipeline-horizontal.svg" />
+                    <img class="swipe horizontal delay2" src="{{ '/static/img/swipeline-horizontal.svg' | url }}" />
 
                 </div>
                 <div class="icon-cell dsgshield">
-                    <!-- <img id="underlay" src="/static/img/icon-dsg-shield.svg" alt="Icon of DSG shield logo" /> -->
-                    <img class="banner-icon" src="/static/img/icon-vis_digital.svg" alt="Icon of a data visualization" />
+                    <!-- <img id="underlay" src="{{ '/static/img/icon-dsg-shield.svg' | url }}" alt="Icon of DSG shield logo" /> -->
+                    <img class="banner-icon" src="{{ '/static/img/icon-vis_passthrough_digital.png' | url }}" alt="Icon of a data visualization" />
 
                 </div>
                 <div class="connector-cell connector-horizontal bottom-right">
@@ -97,10 +97,10 @@
                     </div>
                     <div class="cta">
                     <ul>
-                        <li><a href="/get-involved/consultations/"><img class="cta-icon" src="/static/img/cta-consultation.png"/>Schedule a consultation</a></li>
-                        <li><a href="/get-involved/event-series/"><img class="cta-icon" src="/static/img/cta-workshop.png"/>Find an event</a></li>
-                        <li><a href="/initiatives/ds-certificate/"><img class="cta-icon" src="/static/img/cta-ds-certificate.png"/>Learn about the DS Certificate Program</a></li>
-                        <li><a href="/contact/"><img class="cta-icon" src="/static/img/cta-mailing-list.png"/>Get in touch</a></li>
+                        <li><a href="/get-involved/consultations/"><img class="cta-icon" src="{{ '/static/img/cta-consultation.png' | url }}"/>Schedule a consultation</a></li>
+                        <li><a href="/get-involved/event-series/"><img class="cta-icon" src="{{ '/static/img/cta-workshop.png' | url }}"/>Find an event</a></li>
+                        <li><a href="/initiatives/ds-certificate/"><img class="cta-icon" src="{{ '/static/img/cta-ds-certificate.png' | url }}"/>Learn about the DS Certificate Program</a></li>
+                        <li><a href="/contact/"><img class="cta-icon" src="{{ '/static/img/cta-mailing-list.png' | url }}"/>Get in touch</a></li>
                     </ul>
                     </div>
                 </div>
