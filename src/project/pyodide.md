@@ -10,7 +10,7 @@ This page shows a minimal Pyodide example using a CDN. You can replace the Pytho
 
 ### Python Code
 
-The following code is loaded from [demo.py](/static/js/demo.py):
+The following code is loaded from [demo.py]({{ '/static/py/demo.py' | url }}):
 
 ```python
 # Calculate statistics on student test scores
@@ -108,7 +108,7 @@ img_base64
       output.textContent = 'Fetching Python code…\n';
       
       // Fetch the Python code from demo.py
-      const response = await fetch('/static/py/demo.py');
+      const response = await fetch('{{ '/static/py/demo.py' | url }}');
       const pythonCode = await response.text();
       
       output.textContent = 'Running Python…\n';
