@@ -9,7 +9,7 @@
         <ul id="nav-toplevel-menu">
             {% for item in navigation %}
                 {% if item.children %}
-                <li class="has-submenu">{{ item.label }}
+                <li class="has-submenu"><span>{{ item.label }}</span>
                     <ul class="nav-submenu">
                         {% for child in item.children %}
                         <li><a href="{{ child.url }}">{{ child.label }}</a></li>
@@ -31,7 +31,7 @@
         <ul id="hamburger-nav-toplevel-menu">
             {% for item in navigation %}
                 {% if item.children %}
-                <li>{{ item.label }}
+                <li><span>{{ item.label }}</span>
                     <ul class="nav-submenu">
                         {% for child in item.children %}
                         <li><a href="{{ child.url }}">{{ child.label }}</a></li>
